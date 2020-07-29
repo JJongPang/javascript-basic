@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag & Drop</title>
+    <style>
+        #box {
+            width: 300px;
+            height: 300px;
+            border: 5px solid black;
+           
+        }
+    </style>
+</head>
+<body>
+
+    <div id="box">
+        <p>안녕?</p>
+    </div>
+
+    <script>
+        var box = document.getElementById('box');
+
+        var touch = {
+            tstart : function() {
+                box.innerHTML = '나를 건드렸군요';
+                this.style.background = 'red';
+            },
+            tend : function() {
+                box.innerHTML = '감사합니다.';
+                this.style.background = '';
+            },
+            tmove : function(e) {
+                
+                var touchobj = e.changedTouches[0];
+
+                var x = parseInt(touchobj.clientX),
+                    y = parseInt(touchobj.clientY),
+                    ex = x - 100;
+                    ey = y - 200;
+
+                    box.innerHTML = '만지는 중입니다.'
+                    this.styel.background = 'black';
+
+                    this.style.left = ex+'px';
+                    this.style.top = ey+'px';
+            }
+        }
+
+        box.addEventListener('touchstart', touch.tstart);
+        box.addEventListener('touchend', touch.tend);
+        box.addEventListener('touchmove', touch.tmove);
+    </script>
+</body>
+</html>

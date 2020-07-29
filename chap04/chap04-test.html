@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <style>
+        #heading {
+            background-color: white;
+            width: 500px;
+            height: 500px;
+            border: 5px solid black;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="heading">
+        <p>마우스를 올려주세요</p>
+    </div>
+
+    <script>
+        var heading = document.getElementById('heading');
+
+        var touch = {
+            tmouseover : function() {
+                heading.innerHTML = '올려 주었습니다.';
+                this.style.background = 'red';
+            },
+            tmouseout : function() {
+                heading.innerHTML = '';
+                this.style.background = '';
+            }
+        }
+
+        heading.addEventListener('mouseover', touch.tmouseover);
+        heading.addEventListener('mouseout', touch.tmouseout);
+    </script>
+
+</body>
+</html>

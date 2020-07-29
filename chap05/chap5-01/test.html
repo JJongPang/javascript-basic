@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+</head>
+<body>
+    <script>
+        var firstNum = prompt('첫번째 숫자를 입력');
+        var secondNum = prompt('두번째 숫자 입력');
+
+        var answer = 0;
+
+        if(firstNum == '' || isNaN(firstNum) && secondNum == '' || isNaN(secondNum)) {
+            alert('숫자를 입력 해주세요');
+        }else {
+            answer = parseInt(firstNum) + parseInt(secondNum);
+            document.write(answer);    
+        }
+    </script>
+</body>
+</html>
