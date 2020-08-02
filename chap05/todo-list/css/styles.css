@@ -1,0 +1,20 @@
+#add-btn {
+    padding: 5px 10px;
+    border: 0;
+    background: #fb0;
+    color:#ffff;
+    border-radius: 5px;  
+}
+
+ul {
+    padding: 0;
+    list-style-position: inside;
+}
+
+li {
+    border-bottom: 1px solid #999;
+}
+
+.active {
+    background-color: #abc;
+}
