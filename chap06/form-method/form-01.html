@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form - 01</title>
+    <style>
+        label {
+            float: left;
+            width: 80px;
+        }
+
+        input,
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- document.formName.typeName.속성(또는 메서드) -->
+    <form action="" name="frm">
+        <label for="myId">ID: </label>
+        <input type="text" id="myId" name="myId" />
+        <label for="pwd">password</label>
+        <input type="password" id="pwd" name="pwd" />
+
+        <input type="button" name="send" value="로그인" />
+    </form>
+
+     <script>
+         //form 객체 지정
+        const frm = document.frm;
+        //id입력란(myId) 객체 지정
+        const myId = frm.myId;
+        const pwd = frm.pwd;
+
+        //전송버튼 객체 지정
+        const send_btn = document.frm.send;
+     
+        send_btn.onclick = function() {
+            let newId = myId.value,
+            newPwd = pwd.value;
+
+            //빈값 검사
+            if(newId == '' || newPwd == '') {
+                alert('아이디 또는 비밀번호가 입력되지 않았습니다.');
+            }else {
+                alert(myId.value + '님 환영합니다.');
+            }
+        }
+     </script>
+</body>
+</html>
