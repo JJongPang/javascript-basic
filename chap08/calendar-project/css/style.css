@@ -1,3 +1,7 @@
+body {
+    text-align: center;
+}
+
 #calendar_wrap {
     background: #333;
     width: 350px;
