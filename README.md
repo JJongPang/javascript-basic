@@ -1,2 +1,0 @@
-# javascript-basic
- javascript study
